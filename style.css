@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 html{
-    box-sizing: border-box;
+    box-sizing: border-box; /* It prevents padding from adding extra width or extra height to the page. */
+
 }
 
 body{
-    margin: 0;
-    min-height: 100vh;
-    background-color: white;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23040304' fill-opacity='0.12' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    color: black;
-    font-family: 'Lemonada', cursive;
-    font-weight: 700;
-    text-align: center ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin:0;
+    min-height: 100vh; /* vh stands for viewport height. It always stretch our background, at least the full height of the screen, even if the content isn't enough to take up the full height of the screen. */
+    background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23f0850d' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+color:black;
+font-family: 'Caveat', cursive;
+font-weight: 700;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .quote-container{
@@ -24,9 +25,8 @@ body{
     padding: 20px 30px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.4) ;
 }
-
 .quote-text{
     font-size: 2.75rem;
 }
@@ -46,12 +46,69 @@ body{
     font-style: italic;
 }
 
-/* Media Query : Tablet or Smaller*/
-@media screen and (max-width: 1000px) {
-.quote-container{
-    margin: auto 30px;
+.button-container{
+    margin-top:15px;
+    display: flex;
+    justify-content: space-between;
 }
-.quote-text{
-    font-size: 2.5rem ;
+
+button{
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #333;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 }
+
+button:hover{
+    filter: brightness(110%);
+}
+
+button:active{
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+.twitter-button:hover{
+    color: #38a1f3;
+}
+
+.fa-twitter{
+    font-size: 1.5rem;
+}
+
+/* loader */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #333; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width:1000px){
+    .quote-container{
+        margin: auto 10px;
+    }
+    .quote-text{
+        font-size: 2.5rem;
+    }
+
+    button{
+        font-size: 0.8rem;
+        padding: 0.3rem 1.2rem;
+    }
 }
